@@ -1,0 +1,32 @@
+To print list on UI:
+
+<FlatList
+    data = {courseGoals}
+    renderItem = {itemData => (
+        <View style = {styles.listItem}>
+            <Text>{itemData.item.value}</Text>
+        </View>
+    )}
+/>
+
+setVehicleNo(listOfVehicleNo => [
+    ...listOfVehicleNo,
+    { key: Math.random().toString(), value:enteredGoal }  
+]);
+
+keyExtractor={(item,index) => item.id} //instead of key id is used
+
+
+// const removeVehicle = vehicleKey => {
+  //   setListOfVehicles(listOfVehicles => {
+  //     return listOfVehicles.filter((vehicle) => vehicle.key != vehicleKey)
+  //   })
+  // }
+
+ // setListOfVehicles(listOfVehicles => [
+    //   ...listOfVehicles,
+    //   { key: Math.random().toString(), value: vehicleNo }
+    // ]);
+    // console.log(vehicleNo);
+
+  // const [listOfVehicles, setListOfVehicles] = useState([]);

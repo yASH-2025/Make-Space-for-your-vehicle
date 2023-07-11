@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msfyv-backend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: msfyv-backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: msfyv-backend
+    spec:
+      containers:
+      - name: msfyv-backend
+        image: tusharsnagpal/make-space-for-your-vehicle-backend:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 5000
+        envFrom:
+        - secretRef:
+            name: msfyv-backend-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: msfyv-backend-service
+spec:
+  selector:
+    app: msfyv-backend
+  ports:
+  - name: http
+    port: 5000
+    targetPort: 5000

@@ -1,0 +1,37 @@
+---
+- name: Kubernetes Copy using Ansible
+  hosts: one
+  tasks:
+    - name: kubernetes copy
+      become: true
+      copy:
+        src: ./kubernetes
+        dest: ./
+        owner: ansible_usr
+        group: ansible_usr
+        mode: 0644
+    - name: Minikube
+      command: minikube start
+    - name: Apply backend secret file
+      command: kubectl apply -f kubernetes/msfyv-backend-secret.yaml
+    - name: Apply backend
+      command: kubectl apply -f kubernetes/msfyv-backend.yaml
+    - name: Apply frontend configmap
+      command: kubectl apply -f kubernetes/msfyv-frontend-configmap.yaml
+    - name: Frontend Service
+      command: kubectl apply -f kubernetes/msfyv-frontend.yaml
+    # - name : Error
+    #   command: kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+    - name: Ingress Active
+      command: kubectl apply -f kubernetes/msfyv-ingress.yaml
+    - name: Ingress enable
+      command: minikube addons enable ingress
+    - name: Deploy frontend on render.com
+      uri:
+        url: https://api.render.com/deploy/srv-chgbfsjhp8u065p0hgi0?key=Vhv-uvPEIkc
+        method: GET
+    - name: Deploy backend on render.com
+      uri:
+        url: https://api.render.com/deploy/srv-chgbmbbhp8u065p1e1dg?key=sOrPGNmIy3Y
+        method: GET
+
