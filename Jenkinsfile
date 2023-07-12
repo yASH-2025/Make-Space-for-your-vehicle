@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Pulling Application from Github Repo') {
             steps {
-                git credentialsId: 'git-credss', url: 'https://github.com/TusharSNagpal/MakeSpaceForYourVehicle.git', branch: 'master'
+                git credentialsId: 'git-credss', url: 'https://github.com/Gaurav-Tilokani/MakeSpaceForYourVehicle.git', branch: 'master'
             }
         }
         stage('Frontend:  Node Package Manager'){
@@ -26,41 +26,41 @@ pipeline {
         }
         stage('Frontend: Build Docker Image') {
 			steps {
-				sh "docker build -t tusharsnagpal/make-space-for-your-vehicle-frontend-web:latest MakeSpaceFYV/frontend-web-react/"
+				sh "docker build -t gauravtilokani/make-space-for-your-vehicle-frontend-web:latest MakeSpaceFYV/frontend-web-react/"
 			}   
 		}
         stage('Backend: Build Docker Image') {
 			steps {
-				sh "docker build -t tusharsnagpal/make-space-for-your-vehicle-backend:latest MakeSpaceFYV/backend/"
+				sh "docker build -t gauravtilokani/make-space-for-your-vehicle-backend:latest MakeSpaceFYV/backend/"
 			}   
 		}
 		stage('Docker LOGIN'){
             steps{
                 script{
                     withCredentials([string(credentialsId: 'docker-auth', variable: 'dockerhubcreds')]) {
-                        sh 'docker login -u tusharsnagpal -p ${dockerhubcreds}'
+                        sh 'docker login -u gauravtilokani -p ${dockerhubcreds}'
                     }
                 }
             }
         }
         stage('FRONTEND Image PUSH'){
             steps{
-                 sh 'docker push tusharsnagpal/make-space-for-your-vehicle-frontend-web:latest'
+                 sh 'docker push gauravtilokani/make-space-for-your-vehicle-frontend-web:latest'
             }
         }
         stage('BACKEND Image PUSH'){
             steps{
-                 sh 'docker push tusharsnagpal/make-space-for-your-vehicle-backend:latest'
+                 sh 'docker push gauravtilokani/make-space-for-your-vehicle-backend:latest'
             }
         }
         stage('Removing Docker Images (frontend) from Local') {
 			steps {
-				sh "docker rmi tusharsnagpal/make-space-for-your-vehicle-frontend-web:latest"
+				sh "docker rmi gauravtilokani/make-space-for-your-vehicle-frontend-web:latest"
 			}
 		}
 		stage('Removing Docker Images (backend) from Local') {
 			steps {
-				sh "docker rmi tusharsnagpal/make-space-for-your-vehicle-backend:latest"
+				sh "docker rmi gauravtilokani/make-space-for-your-vehicle-backend:latest"
 			}
 		}
 		stage('Ansible'){
