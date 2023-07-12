@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: msfyv-backend
-        image: tusharsnagpal/make-space-for-your-vehicle-backend:latest
+        image: gauravtilokani/make-space-for-your-vehicle-backend:latest
         resources:
           limits:
             memory: "128Mi"
