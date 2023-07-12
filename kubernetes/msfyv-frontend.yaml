@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: msfyv-frontend
-        image: tusharsnagpal/make-space-for-your-vehicle-frontend-web:latest
+        image: gauravtilokani/make-space-for-your-vehicle-frontend-web:latest
         ports:
         - containerPort: 3000
 ---
