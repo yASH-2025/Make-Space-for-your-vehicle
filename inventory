@@ -1,2 +1,2 @@
 [one]
-c1 ansible_host=172.16.132.90 ansible_connection=ssh ansible_user=ansible_usr ansible_sudo_pass=8795
+c1 ansible_host=your_ip ansible_connection=ssh ansible_user=your_usr ansible_sudo_pass=your_pass
