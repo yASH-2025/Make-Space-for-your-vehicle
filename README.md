@@ -1,5 +1,5 @@
 # MakeSpaceForYourVehicle
-An application for booking parking slot.
+An application for booking parking slot and managing space for vehicles.
 
 Technologies Used:
   NodeJs, ReactJs, Jenkins, Docker, Docker-compose, Kubernetes, Ansible, ELK stack.
