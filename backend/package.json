@@ -8,7 +8,7 @@
     "server": "NODE_ENV=production nodemon index.js",
     "test": "NODE_ENV=test jest --runInBand --detectOpenHandles --forceExit --verbose backend/tests/**.test.js"
   },
-  "author": "TusharSNagpal, Gaurav Tilokani",
+  "author": "Yash Tilokani",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
