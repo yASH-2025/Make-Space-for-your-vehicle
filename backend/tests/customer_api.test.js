@@ -51,11 +51,11 @@ describe('adding a new customer', () => {
 
     test('Customer already exists', async() => {
         const customer = {
-            'name': 'Gaurav',
+            'name': 'Yash',
             'phone': '9558342619',
-            'address': 'IIITB',
+            'address': 'IIITP',
             'pincode': '390006',
-            'password': 'gaurav'
+            'password': 'Yash'
         }
 
         await api  
@@ -77,7 +77,7 @@ describe('Login Customer', () => {
     test('Invalid Credentials', async() => {
         const customer = {
             'phone': '958342619',
-            'password': 'gaurav'
+            'password': 'Yash'
         }
         await api.
                 post('/api/customers/login')

@@ -17,7 +17,7 @@ beforeEach(async () => {
 describe('Adding new Property', () => {
     test('Property is added successfully', async() =>{
         const property = {
-            'prop_address': 'Gaurav Property 3',
+            'prop_address': 'Yash Property 3',
             'owner_id': '6443dfb002e346c42ba02212',
             'slots': 5,
             'pincode': '390006'
@@ -31,7 +31,7 @@ describe('Adding new Property', () => {
     })
     test('Please add all fields', async() =>{
         const property = {
-            'prop_address': 'Gaurav Property 4',
+            'prop_address': 'Yash Property 4',
             'owner_id': '6443dfb002e346c42ba02212',
             'slots': 0,
             'pincode': '390006'

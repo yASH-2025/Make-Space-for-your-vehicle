@@ -8,12 +8,12 @@ const Property = require('../models/propertiesModel')
 
 /* 
 MongoDB Id's for reference
-Owner Gaurav: '6443dfb002e346c42ba02212'
+Owner Yash: '6443dfb002e346c42ba02212'
 Owner Tushar: '6443dfb002e346c42ba02213'
-Customer Gaurav: '6443dfb27dc611605f6c6e28'
+Customer Yash: '6443dfb27dc611605f6c6e28'
 Customer Tushar: '6443dfb27dc611605f6c6e29'
-Gaurav Property 1: '6443dfb27dc611605f6c6e35'
-Gaurav Property 2: '6443dfb27dc611605f6c6e36'
+Yash Property 1: '6443dfb27dc611605f6c6e35'
+Yash Property 2: '6443dfb27dc611605f6c6e36'
 Booking1: '6443dfb27dc611605f6c6e45'
 Booking2: '6443dfb27dc611605f6c6e46'
 */
@@ -21,7 +21,7 @@ Booking2: '6443dfb27dc611605f6c6e46'
 const initialOwners = [
     {
         '_id': new mongoose.Types.ObjectId('6443dfb002e346c42ba02212'),
-        'name': 'Gaurav',
+        'name': 'Yash',
         'phone': '9558342619',
         'address': 'IIITB',
         'password': '$2a$10$UDGGLBRXE8nHCR1WadpiAOIuaf0w5xMy1SN0Ce6SF7hQe4eXbfd.S'
@@ -38,7 +38,7 @@ const initialOwners = [
 const initialCustomers = [
     {
         '_id': new mongoose.Types.ObjectId('6443dfb27dc611605f6c6e28'),
-        'name': 'Gaurav',
+        'name': 'Yash',
         'phone': '9558342619',
         'address': 'IIITB',
         'pincode': '390006',
@@ -58,14 +58,14 @@ const initialProperties = [
     {
         '_id': '6443dfb27dc611605f6c6e35',
         'slots': 5,
-        'prop_address': 'Gaurav Property 1',
+        'prop_address': 'Yash Property 1',
         'pincode': '390006',
         'owner_id': '6443dfb002e346c42ba02212'
     },
     {
         '_id': '6443dfb27dc611605f6c6e36',
         'slots': 0,
-        'prop_address': 'Gaurav Property 2',
+        'prop_address': 'Yash Property 2',
         'pincode': '390006',
         'owner_id': '6443dfb002e346c42ba02212'
     }
@@ -96,12 +96,12 @@ const initialBookings = [
 
 const loginOwner = {
     'phone': '9558342619',
-    'password': 'gaurav'
+    'password': 'Yash'
 }
 
 const loginCustomer = {
     'phone': '9558342619',
-    'password': 'gaurav'
+    'password': 'Yash'
 }
 
 const ownersInDb = async() => {

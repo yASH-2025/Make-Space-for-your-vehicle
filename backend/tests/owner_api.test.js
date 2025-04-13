@@ -49,10 +49,10 @@ describe('adding a new owner', () => {
 
     test('Owner already exists', async() => {
         const owner = {
-            'name':'gaurav',
+            'name':'Yash',
             'phone': '9558342619',
             'address': 'IIITB',
-            'password': 'gaurav'
+            'password': 'Yash'
         }
 
         await api  
@@ -74,7 +74,7 @@ describe('Login Owner', () => {
     test('Invalid Credentials', async() => {
         const owner = {
             'phone': '958342619',
-            'password': 'gaurav'
+            'password': 'Yash'
         }
         await api.
                 post('/api/owners/login')
